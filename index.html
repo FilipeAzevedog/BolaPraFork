@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Bola Pra Frente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .animate-slide-in {
+            animation: slideIn 0.8s ease-in-out forwards;
+        }
+        /* Fundo dinâmico */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: linear-gradient(45deg, rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.8));
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .section {
+            padding: 100px 20px;
+        }
+        h2 {
+            color: #4ADE80;
+        }
+        p {
+            color: #E5E7EB;
+        }
+        .hover-effect {
+            transition: transform 0.2s ease;
+        }
+        .hover-effect:hover {
+            transform: scale(1.05);
+        }
+        /* Tema claro */
+        .light-theme {
+            background-color: #f9fafb;
+            color: #111827;
+        }
+        .light-theme h2 {
+            color: #1f2937;
+        }
+        .light-theme p {
+            color: #374151;
+        }
+        /* Estilo para desativar animações */
+        .no-animations * {
+            animation: none !important;
+            transition: none !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Background Animation -->
+    <div class="background"></div>
+
+    <!-- Navbar -->
+    <nav class="bg-black backdrop-blur-md shadow-lg fixed w-full z-10 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-green-500">Bola Pra Frente</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-lg text-gray-300 hover:text-green-500 transition">Home</a>
+                    <a href="#sobre" class="text-lg text-gray-300 hover:text-green-500 transition">Sobre</a>
+                    <a href="#oque-fazer" class="text-lg text-gray-300 hover:text-green-500 transition">O Que Fazer</a>
+                    <a href="#projeto" class="text-lg text-gray-300 hover:text-green-500 transition">O Projeto</a>
+                    <a href="#contato" class="text-lg text-gray-300 hover:text-green-500 transition">Como Contatar</a>
+                    <a href="#acessibilidade" class="text-lg text-gray-300 hover:text-green-500 transition">Acessibilidade</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="h-screen flex items-center justify-center relative section">
+        <div class="text-center p-8 backdrop-blur-lg rounded-lg shadow-lg animate-fade-in">
+            <h1 class="text-5xl font-bold text-green-400 mb-4">Bem-vindo ao Instituto Bola Pra Frente</h1>
+            <p class="text-xl text-gray-300 mb-6">Promovendo o esporte e cultura para crianças e adolescentes do Complexo do Muquiço.</p>
+            <a href="#sobre" class="px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition duration-300">Saiba Mais</a>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-gray-800 section">
+        <div class="max-w-6xl mx-auto px-6 animate-fade-in">
+            <h2 class="text-4xl font-semibold text-center mb-8">Sobre Nós</h2>
+            <p class="text-lg leading-relaxed text-center">
+                O Instituto Bola Pra Frente é uma Organização da Sociedade Civil fundada em 2000 pelo tetracampeão mundial de futebol Jorginho. 
+                Atuamos em comunidades socialmente vulneráveis, utilizando o esporte e a cultura como ferramentas de promoção social.
+                Atualmente, atendemos 430 crianças e adolescentes do Complexo do Muquiço.
+            </p>
+        </div>
+    </section>
+
+    <!-- O Que Fazer Section -->
+    <section id="oque-fazer" class="py-20 bg-gray-900 section">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-center mb-8">O Que Fazer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-slide-in hover-effect">
+                    <h3 class="text-2xl font-bold mb-2">Esporte</h3>
+                    <p>Promovemos atividades esportivas, especialmente futebol, para crianças e adolescentes, incentivando o trabalho em equipe e a saúde física.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-slide-in delay-200 hover-effect">
+                    <h3 class="text-2xl font-bold mb-2">Cultura</h3>
+                    <p>Através da cultura, nossos participantes desenvolvem habilidades artísticas e ampliam sua visão de mundo, com atividades voltadas para música e arte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Projeto Section -->
+    <section id="projeto" class="py-20 bg-gray-800 section">
+        <div class="max-w-6xl mx-auto px-6 animate-fade-in">
+            <h2 class="text-4xl font-semibold text-center mb-8">O Projeto</h2>
+            <p class="text-lg leading-relaxed text-center">
+                O Projeto Bola Pra Frente é uma iniciativa de impacto social que visa transformar vidas através do esporte e da cultura.
+                Nossa missão é criar um ambiente seguro e positivo, onde crianças e adolescentes possam crescer e se desenvolver, tanto física quanto emocionalmente.
+            </p>
+        </div>
+    </section>
+
+    <!-- Como Contatar Section -->
+    <section id="contato" class="py-20 bg-gray-900 section">
+        <div class="max-w-6xl mx-auto px-6 animate-fade-in">
+            <h2 class="text-4xl font-semibold text-center mb-8">Como Contatar</h2>
+            <p class="text-lg leading-relaxed text-center">
+                Você pode entrar em contato conosco através do e-mail: contato@bolaprafrente.org.br ou pelo telefone 55 (21) 3018-5858.
+            </p>
+        </div>
+    </section>
+
+    <!-- Acessibilidade Section -->
+    <section id="acessibilidade" class="py-20 bg-gray-800 section">
+        <div class="max-w-6xl mx-auto px-6 animate-fade-in">
+            <h2 class="text-4xl font-semibold text-center mb-8">Acessibilidade</h2>
+            <p class="text-lg leading-relaxed text-center mb-4">
+                Para garantir a inclusão, oferecemos um tradutor de Libras e opções de tema claro e escuro.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <button id="toggle-theme" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">Alternar Tema</button>
+                <button id="toggle-animation" class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition">Desativar Animações</button>
+            </div>
+        </div>
+
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+            <script>
+                new window.VLibras.Widget('https://vlibras.gov.br/app');
+            </script>
+        </div>
+    </section>
+
+    <script>
+        // Efeito de movimento do fundo
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            document.querySelector('.background').style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+        });
+
+        // Alternar tema claro/escuro
+        const toggleThemeButton = document.getElementById('toggle-theme');
+        toggleThemeButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            toggleThemeButton.innerText = document.body.classList.contains('light-theme') ? 'Tema Escuro' : 'Tema Claro';
+            if (document.body.classList.contains('light-theme')) {
+                document.body.style.backgroundColor = '#f9fafb'; // Fundo claro
+                document.body.style.color = '#111827'; // Texto escuro
+            } else {
+                document.body.style.backgroundColor = '#1f2937'; // Fundo escuro
+                document.body.style.color = '#e5e7eb'; // Texto claro
+            }
+        });
+
+        // Desativar animações
+        const toggleAnimationButton = document.getElementById('toggle-animation');
+        toggleAnimationButton.addEventListener('click', () => {
+            document.body.classList.toggle('no-animations');
+            toggleAnimationButton.innerText = document.body.classList.contains('no-animations') ? 'Ativar Animações' : 'Desativar Animações';
+        });
+    </script>
+</body>
+</html>
